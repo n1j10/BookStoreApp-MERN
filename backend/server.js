@@ -38,6 +38,10 @@ app.use("/images",express.static("images"))
 
 const PORT  = process.env.PORT || 3000
 
+app.get("/", (req, res) => {
+  res.json({ message: "Server is live ..." });
+});
+
 app.listen(PORT,()=> {
     console.log(`server is running on port ${PORT}`)
 })
