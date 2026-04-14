@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
 
     const checkAuthStatus = async () => {
         try {
-            const response = await fetch("http://localhost:5000/users/verify", {
+            const response = await fetch("https://book-store-app-mern-xi.vercel.app/users/verify", {
                 method: "GET",
                 credentials: 'include',
             })
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (credentials) => {
         try {
-            const response = await fetch("http://localhost:5000/users/signin", {
+            const response = await fetch("https://book-store-app-mern-xi.vercel.app/users/signin", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (userData) => {
         try {
-            const response = await fetch("http://localhost:5000/users/register", {
+            const response = await fetch("https://book-store-app-mern-xi.vercel.app/users/register", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = async () => {
         try {
-            const response = await fetch("http://localhost:5000/users/logout", {
+            const response = await fetch("https://book-store-app-mern-xi.vercel.app/users/logout", {
                 method: "POST",
                 credentials: 'include',
             })

@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://book-store-app-mern-xi.vercel.app/";
 const FALLBACK_IMAGE_URL = "https://picsum.photos/seed/book-fallback/400/600";
 
 export const getImageSrc = (coverImage) => {

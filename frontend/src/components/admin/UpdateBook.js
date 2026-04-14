@@ -9,7 +9,7 @@ function UpdateBook() {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/books/${id}`)
+        fetch(`https://book-store-app-mern-xi.vercel.app/books/${id}`)
         .then((res)=>res.json())
         .then((data)=>{
             setBook(data)
@@ -27,7 +27,7 @@ function UpdateBook() {
 
     const handleUpdate= async()=>{
         try {
-            const res = await fetch(`http://localhost:5000/books/updateBook/${id}`,{
+            const res = await fetch(`https://book-store-app-mern-xi.vercel.app/books/updateBook/${id}`,{
                 method:"PUT",
                  headers: { "Content-Type": "application/json" },
                  body:JSON.stringify(book)
@@ -50,7 +50,7 @@ function UpdateBook() {
     const handleDelete = async()=>{
         if(!window.confirm("are you sure you want to delete this book")) return
         try {
-            const res = await fetch(`http://localhost:5000/books/deleteBook/${id}`,{
+            const res = await fetch(`https://book-store-app-mern-xi.vercel.app/books/deleteBook/${id}`,{
                 method:"DELETE"
             })
 

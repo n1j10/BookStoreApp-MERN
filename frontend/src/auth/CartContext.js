@@ -8,7 +8,7 @@ export function CartProvider({children}){
 
 
     useEffect(()=>{
-        fetch("http://localhost:5000/carts", {credentials:"include"}).then(res => res.json())
+        fetch("https://book-store-app-mern-xi.vercel.app/carts", {credentials:"include"}).then(res => res.json())
         .then(data =>setCart(data.cart))
     },[])
 
@@ -16,7 +16,7 @@ export function CartProvider({children}){
     const addToCart = async (bookId) => {
   console.log("sending bookId:", bookId);
 
-  const res = await fetch("http://localhost:5000/carts/add", {
+  const res = await fetch("https://book-store-app-mern-xi.vercel.app/carts/add", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -35,7 +35,7 @@ export function CartProvider({children}){
 
 
      const updateCart = async(bookId, quantity)=>{
-        const res = await fetch("http://localhost:5000/carts/update",{
+        const res = await fetch("https://book-store-app-mern-xi.vercel.app/carts/update",{
              method:"PUT",
             headers:{
               "Content-Type": "application/json" 
@@ -59,7 +59,7 @@ export function CartProvider({children}){
 
 
      const removeFromCart = async(bookId)=>{
-         const res = await fetch(`http://localhost:5000/carts/remove/${bookId}`,{
+         const res = await fetch(`https://book-store-app-mern-xi.vercel.app/carts/remove/${bookId}`,{
             method:"DELETE",
               credentials:"include",
               

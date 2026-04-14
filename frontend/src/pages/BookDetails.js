@@ -14,7 +14,7 @@ function BookDetails() {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/books/${id}`)
+        fetch(`https://book-store-app-mern-xi.vercel.app/books/${id}`)
         .then((res)=>res.json())
         .then((data)=>{
             setBook(data)

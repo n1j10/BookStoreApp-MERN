@@ -36,7 +36,7 @@ function AddBook() {
         }
         const loadCats= async()=>{
             try {
-         const res = await fetch("http://localhost:5000/category/getCategories",{
+         const res = await fetch("https://book-store-app-mern-xi.vercel.app/category/getCategories",{
           method:"GET",
             credentials: "include",
          })
@@ -109,7 +109,7 @@ fd.append("discountPercent", String(form.discountPercent));
 
     try{
      setSubmitting(true);
-    const res = await fetch("http://localhost:5000/admin/createBook", {
+    const res = await fetch("https://book-store-app-mern-xi.vercel.app/admin/createBook", {
   method: "POST",
     credentials: "include",
            

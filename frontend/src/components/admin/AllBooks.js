@@ -15,7 +15,7 @@ function Allbooks() {
       const fetchBooks = async()=>{
         
         try {
-          const  res = await fetch("http://localhost:5000/admin/getBooks",{
+          const  res = await fetch("https://book-store-app-mern-xi.vercel.app/admin/getBooks",{
             method:"GET",
              credentials: "include",
             headers:{
