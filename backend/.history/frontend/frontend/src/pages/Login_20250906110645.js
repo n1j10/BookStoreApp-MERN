@@ -1,0 +1,80 @@
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+function Login() {
+
+    const [form,setForm] = useState({email:"",password:""})
+    const [loading ,setLoading] = useState(false)
+    const [err,setErr] = useState("")
+     const navigate = useNavigate()
+
+
+    const onSubmit= async(e)=>{
+   e.preventDefault()
+   setErr("")
+   setLoading(true)
+   try {
+    const res = await fetch("http://localhost:5000/users/signin",{
+        method:"POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include", 
+         body: JSON.stringify(form),
+    })
+
+    const data = await res.json()
+
+    if (!res.ok) throw new Error(data?.message || "Login failed");
+
+
+    const role = data?.role || "user"
+
+    const redirect = data?.redirect || (role === "admin" ? "/admin" : "/")
+
+    navigate(redirect,{replace:true})
+
+   } catch (error) {
+     setErr(error.message);
+   }finally{
+      setLoading(false);
+   }
+    }
+
+  return (
+    <div className='max-w-md mx-auto py-10 mt-50'>
+         
+      <h1 className="text-2xl font-bold mb-6">Login</h1>
+
+
+      <form onSubmit={onSubmit}>
+
+        <input
+        
+        className='w-full border p-2 rounded'
+        placeholder='Email'
+        name="email"
+        type='email'
+        value={form.email}
+        onChange={(e)=> setForm(e.target.value)}
+        />
+
+
+        
+        <input
+        
+        className='w-full border p-2 rounded'
+        placeholder='Password'
+        name="password"
+        type='password'
+        value={form.password}
+        onChange={(e)=> setForm(e.target.value)}
+        />
+
+        {err && <p className="text-red-500 text-sm">{err}</p>}
+
+        <button  disabled={loading}> {loading ? "..." : "Login"}</button> 
+      </form>
+    </div>
+  )
+}
+
+export default Login

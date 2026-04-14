@@ -1,0 +1,449 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.9.0
+2 info using node@v24.14.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\n1j\Desktop\BookStoreAppMERN-main\.npmrc
+5 silly config load:file:C:\Users\n1j\.npmrc
+6 silly config load:file:C:\Users\n1j\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install mongodb-memory-server@latest
+8 verbose argv "install" "mongodb-memory-server@latest" "--cache" "./.npm-cache" "--prefer-offline" "--no-progress"
+9 verbose logfile logs-max:10 dir:C:\Users\n1j\Desktop\BookStoreAppMERN-main\.npm-cache\_logs\2026-03-17T18_07_55_231Z-
+10 verbose logfile C:\Users\n1j\Desktop\BookStoreAppMERN-main\.npm-cache\_logs\2026-03-17T18_07_55_231Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+13 silly packumentCache corgi:https://registry.npmjs.org/mongodb-memory-server cache-miss
+14 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+15 http fetch GET 200 https://registry.npmjs.org/mongodb-memory-server 124ms (cache stale)
+16 silly packumentCache corgi:https://registry.npmjs.org/mongodb-memory-server set size:541943 disposed:false
+17 silly idealTree buildDeps
+18 silly fetch manifest mongodb-memory-server@11.0.1
+19 silly packumentCache full:https://registry.npmjs.org/mongodb-memory-server cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/mongodb-memory-server 17ms (cache stale)
+21 silly packumentCache full:https://registry.npmjs.org/mongodb-memory-server set size:1038728 disposed:false
+22 silly placeDep ROOT mongodb-memory-server@11.0.1 OK for: bookstore@1.0.0 want: 11.0.1
+23 silly fetch manifest mongodb-memory-server-core@11.0.1
+24 silly packumentCache full:https://registry.npmjs.org/mongodb-memory-server-core cache-miss
+25 silly fetch manifest tslib@^2.8.1
+26 silly packumentCache full:https://registry.npmjs.org/tslib cache-miss
+27 http fetch GET 200 https://registry.npmjs.org/tslib 10ms (cache stale)
+28 silly packumentCache full:https://registry.npmjs.org/tslib set size:108760 disposed:false
+29 http fetch GET 200 https://registry.npmjs.org/mongodb-memory-server-core 16ms (cache stale)
+30 silly packumentCache full:https://registry.npmjs.org/mongodb-memory-server-core set size:1067546 disposed:false
+31 silly placeDep ROOT mongodb-memory-server-core@11.0.1 OK for: mongodb-memory-server@11.0.1 want: 11.0.1
+32 silly placeDep ROOT tslib@2.8.1 OK for: mongodb-memory-server@11.0.1 want: ^2.8.1
+33 silly fetch manifest async-mutex@^0.5.0
+34 silly packumentCache full:https://registry.npmjs.org/async-mutex cache-miss
+35 silly fetch manifest camelcase@^6.3.0
+36 silly packumentCache full:https://registry.npmjs.org/camelcase cache-miss
+37 silly fetch manifest find-cache-dir@^3.3.2
+38 silly packumentCache full:https://registry.npmjs.org/find-cache-dir cache-miss
+39 silly fetch manifest follow-redirects@^1.15.11
+40 silly packumentCache full:https://registry.npmjs.org/follow-redirects cache-miss
+41 silly fetch manifest https-proxy-agent@^7.0.6
+42 silly packumentCache full:https://registry.npmjs.org/https-proxy-agent cache-miss
+43 silly fetch manifest mongodb@^7.0.0
+44 silly packumentCache full:https://registry.npmjs.org/mongodb cache-miss
+45 silly fetch manifest new-find-package-json@^2.0.0
+46 silly packumentCache full:https://registry.npmjs.org/new-find-package-json cache-miss
+47 silly fetch manifest semver@^7.7.3
+48 silly packumentCache full:https://registry.npmjs.org/semver cache-miss
+49 silly fetch manifest tar-stream@^3.1.7
+50 silly packumentCache full:https://registry.npmjs.org/tar-stream cache-miss
+51 silly fetch manifest yauzl@^3.2.0
+52 silly packumentCache full:https://registry.npmjs.org/yauzl cache-miss
+53 http fetch GET 200 https://registry.npmjs.org/async-mutex 39ms (cache stale)
+54 silly packumentCache full:https://registry.npmjs.org/async-mutex set size:76106 disposed:false
+55 http fetch GET 200 https://registry.npmjs.org/find-cache-dir 39ms (cache stale)
+56 silly packumentCache full:https://registry.npmjs.org/find-cache-dir set size:35762 disposed:false
+57 http fetch GET 200 https://registry.npmjs.org/follow-redirects 42ms (cache stale)
+58 silly packumentCache full:https://registry.npmjs.org/follow-redirects set size:186700 disposed:false
+59 http fetch GET 200 https://registry.npmjs.org/semver 43ms (cache stale)
+60 silly packumentCache full:https://registry.npmjs.org/semver set size:229678 disposed:false
+61 http fetch GET 200 https://registry.npmjs.org/tar-stream 47ms (cache stale)
+62 silly packumentCache full:https://registry.npmjs.org/tar-stream set size:134193 disposed:false
+63 http fetch GET 200 https://registry.npmjs.org/new-find-package-json 51ms (cache stale)
+64 silly packumentCache full:https://registry.npmjs.org/new-find-package-json set size:17481 disposed:false
+65 http fetch GET 200 https://registry.npmjs.org/https-proxy-agent 54ms (cache stale)
+66 silly packumentCache full:https://registry.npmjs.org/https-proxy-agent set size:78754 disposed:false
+67 http fetch GET 200 https://registry.npmjs.org/yauzl 53ms (cache stale)
+68 silly packumentCache full:https://registry.npmjs.org/yauzl set size:98808 disposed:false
+69 http fetch GET 200 https://registry.npmjs.org/mongodb 69ms (cache stale)
+70 silly packumentCache full:https://registry.npmjs.org/mongodb set size:4121255 disposed:false
+71 http fetch GET 200 https://registry.npmjs.org/camelcase 116ms (cache stale)
+72 silly packumentCache full:https://registry.npmjs.org/camelcase set size:60255 disposed:false
+73 silly fetch manifest @aws-sdk/credential-providers@^3.806.0
+74 silly packumentCache full:https://registry.npmjs.org/@aws-sdk%2fcredential-providers cache-miss
+75 http fetch GET 200 https://registry.npmjs.org/@aws-sdk%2fcredential-providers 13ms (cache stale)
+76 silly packumentCache full:https://registry.npmjs.org/@aws-sdk%2fcredential-providers set size:1960436 disposed:false
+77 silly fetch manifest @mongodb-js/zstd@^7.0.0
+78 silly packumentCache full:https://registry.npmjs.org/@mongodb-js%2fzstd cache-miss
+79 http fetch GET 200 https://registry.npmjs.org/@mongodb-js%2fzstd 13ms (cache stale)
+80 silly packumentCache full:https://registry.npmjs.org/@mongodb-js%2fzstd set size:99219 disposed:false
+81 silly fetch manifest gcp-metadata@^7.0.1
+82 silly packumentCache full:https://registry.npmjs.org/gcp-metadata cache-miss
+83 http fetch GET 200 https://registry.npmjs.org/gcp-metadata 13ms (cache stale)
+84 silly packumentCache full:https://registry.npmjs.org/gcp-metadata set size:191448 disposed:false
+85 silly fetch manifest kerberos@^7.0.0
+86 silly packumentCache full:https://registry.npmjs.org/kerberos cache-miss
+87 http fetch GET 200 https://registry.npmjs.org/kerberos 7ms (cache stale)
+88 silly packumentCache full:https://registry.npmjs.org/kerberos set size:117537 disposed:false
+89 silly fetch manifest mongodb-client-encryption@>=7.0.0 <7.1.0
+90 silly packumentCache full:https://registry.npmjs.org/mongodb-client-encryption cache-miss
+91 http fetch GET 200 https://registry.npmjs.org/mongodb-client-encryption 7ms (cache stale)
+92 silly packumentCache full:https://registry.npmjs.org/mongodb-client-encryption set size:262386 disposed:false
+93 silly fetch manifest snappy@^7.3.2
+94 silly packumentCache full:https://registry.npmjs.org/snappy cache-miss
+95 http fetch GET 200 https://registry.npmjs.org/snappy 8ms (cache stale)
+96 silly packumentCache full:https://registry.npmjs.org/snappy set size:185121 disposed:false
+97 silly fetch manifest socks@^2.8.6
+98 silly packumentCache full:https://registry.npmjs.org/socks cache-miss
+99 http fetch GET 200 https://registry.npmjs.org/socks 8ms (cache stale)
+100 silly packumentCache full:https://registry.npmjs.org/socks set size:168523 disposed:false
+101 silly placeDep ROOT async-mutex@0.5.0 OK for: mongodb-memory-server-core@11.0.1 want: ^0.5.0
+102 silly placeDep ROOT camelcase@6.3.0 OK for: mongodb-memory-server-core@11.0.1 want: ^6.3.0
+103 silly placeDep ROOT find-cache-dir@3.3.2 OK for: mongodb-memory-server-core@11.0.1 want: ^3.3.2
+104 silly placeDep ROOT follow-redirects@1.15.11 OK for: mongodb-memory-server-core@11.0.1 want: ^1.15.11
+105 silly placeDep ROOT https-proxy-agent@7.0.6 OK for: mongodb-memory-server-core@11.0.1 want: ^7.0.6
+106 silly placeDep node_modules/mongodb-memory-server-core mongodb@7.1.0 OK for: mongodb-memory-server-core@11.0.1 want: ^7.0.0
+107 silly placeDep ROOT new-find-package-json@2.0.0 OK for: mongodb-memory-server-core@11.0.1 want: ^2.0.0
+108 silly placeDep ROOT semver@7.7.4 REPLACE for: mongodb-memory-server-core@11.0.1 want: ^7.7.3
+109 silly placeDep ROOT tar-stream@3.1.8 OK for: mongodb-memory-server-core@11.0.1 want: ^3.1.7
+110 silly placeDep ROOT yauzl@3.2.1 OK for: mongodb-memory-server-core@11.0.1 want: ^3.2.0
+111 silly fetch manifest pkg-dir@^4.1.0
+112 silly packumentCache full:https://registry.npmjs.org/pkg-dir cache-miss
+113 silly fetch manifest make-dir@^3.0.2
+114 silly packumentCache full:https://registry.npmjs.org/make-dir cache-miss
+115 silly fetch manifest commondir@^1.0.1
+116 silly packumentCache full:https://registry.npmjs.org/commondir cache-miss
+117 silly fetch manifest agent-base@^7.1.2
+118 silly packumentCache full:https://registry.npmjs.org/agent-base cache-miss
+119 silly fetch manifest bson@^7.1.1
+120 silly packumentCache full:https://registry.npmjs.org/bson cache-miss
+121 silly fetch manifest mongodb-connection-string-url@^7.0.0
+122 silly packumentCache full:https://registry.npmjs.org/mongodb-connection-string-url cache-miss
+123 silly fetch manifest b4a@^1.6.4
+124 silly packumentCache full:https://registry.npmjs.org/b4a cache-miss
+125 silly fetch manifest bare-fs@^4.5.5
+126 silly packumentCache full:https://registry.npmjs.org/bare-fs cache-miss
+127 silly fetch manifest fast-fifo@^1.2.0
+128 silly packumentCache full:https://registry.npmjs.org/fast-fifo cache-miss
+129 silly fetch manifest streamx@^2.15.0
+130 silly packumentCache full:https://registry.npmjs.org/streamx cache-miss
+131 silly fetch manifest buffer-crc32@~0.2.3
+132 silly packumentCache full:https://registry.npmjs.org/buffer-crc32 cache-miss
+133 http fetch GET 200 https://registry.npmjs.org/make-dir 36ms (cache stale)
+134 silly packumentCache full:https://registry.npmjs.org/make-dir set size:34889 disposed:false
+135 silly fetch manifest pend@~1.2.0
+136 silly packumentCache full:https://registry.npmjs.org/pend cache-miss
+137 http fetch GET 200 https://registry.npmjs.org/agent-base 40ms (cache stale)
+138 silly packumentCache full:https://registry.npmjs.org/agent-base set size:69775 disposed:false
+139 http fetch GET 200 https://registry.npmjs.org/commondir 42ms (cache stale)
+140 silly packumentCache full:https://registry.npmjs.org/commondir set size:8375 disposed:false
+141 http fetch GET 200 https://registry.npmjs.org/pkg-dir 45ms (cache stale)
+142 silly packumentCache full:https://registry.npmjs.org/pkg-dir set size:30166 disposed:false
+143 http fetch GET 200 https://registry.npmjs.org/mongodb-connection-string-url 45ms (cache stale)
+144 silly packumentCache full:https://registry.npmjs.org/mongodb-connection-string-url set size:127890 disposed:false
+145 http fetch GET 200 https://registry.npmjs.org/bson 50ms (cache stale)
+146 silly packumentCache full:https://registry.npmjs.org/bson set size:580424 disposed:false
+147 http fetch GET 200 https://registry.npmjs.org/b4a 59ms (cache stale)
+148 silly packumentCache full:https://registry.npmjs.org/b4a set size:69563 disposed:false
+149 http fetch GET 200 https://registry.npmjs.org/bare-fs 61ms (cache stale)
+150 silly packumentCache full:https://registry.npmjs.org/bare-fs set size:144893 disposed:false
+151 http fetch GET 200 https://registry.npmjs.org/fast-fifo 63ms (cache stale)
+152 silly packumentCache full:https://registry.npmjs.org/fast-fifo set size:13855 disposed:false
+153 http fetch GET 200 https://registry.npmjs.org/streamx 65ms (cache stale)
+154 silly packumentCache full:https://registry.npmjs.org/streamx set size:156879 disposed:false
+155 http fetch GET 200 https://registry.npmjs.org/buffer-crc32 67ms (cache stale)
+156 silly packumentCache full:https://registry.npmjs.org/buffer-crc32 set size:58100 disposed:false
+157 http fetch GET 200 https://registry.npmjs.org/pend 41ms (cache stale)
+158 silly packumentCache full:https://registry.npmjs.org/pend set size:8066 disposed:false
+159 silly placeDep ROOT commondir@1.0.1 OK for: find-cache-dir@3.3.2 want: ^1.0.1
+160 silly placeDep ROOT make-dir@3.1.0 OK for: find-cache-dir@3.3.2 want: ^3.0.2
+161 silly placeDep ROOT pkg-dir@4.2.0 OK for: find-cache-dir@3.3.2 want: ^4.1.0
+162 silly fetch manifest semver@^6.0.0
+163 silly packumentCache full:https://registry.npmjs.org/semver cache-hit
+164 silly fetch manifest find-up@^4.0.0
+165 silly packumentCache full:https://registry.npmjs.org/find-up cache-miss
+166 http fetch GET 200 https://registry.npmjs.org/find-up 11ms (cache stale)
+167 silly packumentCache full:https://registry.npmjs.org/find-up set size:42620 disposed:false
+168 silly placeDep ROOT agent-base@7.1.4 OK for: https-proxy-agent@7.0.6 want: ^7.1.2
+169 silly placeDep node_modules/make-dir semver@6.3.1 OK for: make-dir@3.1.0 want: ^6.0.0
+170 silly placeDep ROOT find-up@4.1.0 OK for: pkg-dir@4.2.0 want: ^4.0.0
+171 silly fetch manifest locate-path@^5.0.0
+172 silly packumentCache full:https://registry.npmjs.org/locate-path cache-miss
+173 silly fetch manifest path-exists@^4.0.0
+174 silly packumentCache full:https://registry.npmjs.org/path-exists cache-miss
+175 http fetch GET 200 https://registry.npmjs.org/path-exists 7ms (cache stale)
+176 silly packumentCache full:https://registry.npmjs.org/path-exists set size:13704 disposed:false
+177 http fetch GET 200 https://registry.npmjs.org/locate-path 21ms (cache stale)
+178 silly packumentCache full:https://registry.npmjs.org/locate-path set size:31329 disposed:false
+179 silly placeDep ROOT locate-path@5.0.0 OK for: find-up@4.1.0 want: ^5.0.0
+180 silly placeDep ROOT path-exists@4.0.0 OK for: find-up@4.1.0 want: ^4.0.0
+181 silly fetch manifest p-locate@^4.1.0
+182 silly packumentCache full:https://registry.npmjs.org/p-locate cache-miss
+183 http fetch GET 200 https://registry.npmjs.org/p-locate 6ms (cache stale)
+184 silly packumentCache full:https://registry.npmjs.org/p-locate set size:22488 disposed:false
+185 silly placeDep ROOT p-locate@4.1.0 OK for: locate-path@5.0.0 want: ^4.1.0
+186 silly fetch manifest p-limit@^2.2.0
+187 silly packumentCache full:https://registry.npmjs.org/p-limit cache-miss
+188 http fetch GET 200 https://registry.npmjs.org/p-limit 7ms (cache stale)
+189 silly packumentCache full:https://registry.npmjs.org/p-limit set size:61867 disposed:false
+190 silly placeDep ROOT p-limit@2.3.0 OK for: p-locate@4.1.0 want: ^2.2.0
+191 silly fetch manifest p-try@^2.0.0
+192 silly packumentCache full:https://registry.npmjs.org/p-try cache-miss
+193 http fetch GET 200 https://registry.npmjs.org/p-try 7ms (cache stale)
+194 silly packumentCache full:https://registry.npmjs.org/p-try set size:13014 disposed:false
+195 silly placeDep ROOT p-try@2.2.0 OK for: p-limit@2.3.0 want: ^2.0.0
+196 silly fetch manifest react-native-b4a@*
+197 silly packumentCache full:https://registry.npmjs.org/react-native-b4a cache-miss
+198 http fetch GET 200 https://registry.npmjs.org/react-native-b4a 7ms (cache stale)
+199 silly packumentCache full:https://registry.npmjs.org/react-native-b4a set size:12082 disposed:false
+200 silly fetch manifest react@*
+201 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+202 http fetch GET 200 https://registry.npmjs.org/react 24ms (cache stale)
+203 silly packumentCache full:https://registry.npmjs.org/react set size:6547508 disposed:false
+204 silly fetch manifest react-native@*
+205 silly packumentCache full:https://registry.npmjs.org/react-native cache-miss
+206 http fetch GET 200 https://registry.npmjs.org/react-native 59ms (cache stale)
+207 silly packumentCache full:https://registry.npmjs.org/react-native set size:14976831 disposed:false
+208 silly fetch manifest @types/react@^19.1.1
+209 silly packumentCache full:https://registry.npmjs.org/@types%2freact cache-miss
+210 http fetch GET 200 https://registry.npmjs.org/@types%2freact 29ms (cache stale)
+211 silly packumentCache full:https://registry.npmjs.org/@types%2freact set size:2588986 disposed:false
+212 silly fetch manifest bare-buffer@*
+213 silly packumentCache full:https://registry.npmjs.org/bare-buffer cache-miss
+214 http fetch GET 200 https://registry.npmjs.org/bare-buffer 12ms (cache stale)
+215 silly packumentCache full:https://registry.npmjs.org/bare-buffer set size:91744 disposed:false
+216 silly placeDep ROOT b4a@1.8.0 OK for: tar-stream@3.1.8 want: ^1.6.4
+217 silly placeDep ROOT bare-fs@4.5.5 OK for: tar-stream@3.1.8 want: ^4.5.5
+218 silly placeDep ROOT fast-fifo@1.3.2 OK for: tar-stream@3.1.8 want: ^1.2.0
+219 silly placeDep ROOT streamx@2.23.0 OK for: tar-stream@3.1.8 want: ^2.15.0
+220 silly fetch manifest bare-events@^2.5.4
+221 silly packumentCache full:https://registry.npmjs.org/bare-events cache-miss
+222 silly fetch manifest bare-path@^3.0.0
+223 silly packumentCache full:https://registry.npmjs.org/bare-path cache-miss
+224 silly fetch manifest bare-stream@^2.6.4
+225 silly packumentCache full:https://registry.npmjs.org/bare-stream cache-miss
+226 silly fetch manifest bare-url@^2.2.2
+227 silly packumentCache full:https://registry.npmjs.org/bare-url cache-miss
+228 silly fetch manifest fast-fifo@^1.3.2
+229 silly packumentCache full:https://registry.npmjs.org/fast-fifo cache-hit
+230 silly fetch manifest events-universal@^1.0.0
+231 silly packumentCache full:https://registry.npmjs.org/events-universal cache-miss
+232 silly fetch manifest text-decoder@^1.1.0
+233 silly packumentCache full:https://registry.npmjs.org/text-decoder cache-miss
+234 http fetch GET 200 https://registry.npmjs.org/bare-stream 24ms (cache stale)
+235 silly packumentCache full:https://registry.npmjs.org/bare-stream set size:49083 disposed:false
+236 http fetch GET 200 https://registry.npmjs.org/bare-url 26ms (cache stale)
+237 silly packumentCache full:https://registry.npmjs.org/bare-url set size:88871 disposed:false
+238 http fetch GET 200 https://registry.npmjs.org/bare-events 34ms (cache stale)
+239 silly packumentCache full:https://registry.npmjs.org/bare-events set size:44911 disposed:false
+240 http fetch GET 200 https://registry.npmjs.org/bare-path 36ms (cache stale)
+241 silly packumentCache full:https://registry.npmjs.org/bare-path set size:17399 disposed:false
+242 http fetch GET 200 https://registry.npmjs.org/text-decoder 34ms (cache stale)
+243 silly packumentCache full:https://registry.npmjs.org/text-decoder set size:22319 disposed:false
+244 http fetch GET 200 https://registry.npmjs.org/events-universal 37ms (cache stale)
+245 silly packumentCache full:https://registry.npmjs.org/events-universal set size:4306 disposed:false
+246 silly fetch manifest bare-abort-controller@*
+247 silly packumentCache full:https://registry.npmjs.org/bare-abort-controller cache-miss
+248 http fetch GET 200 https://registry.npmjs.org/bare-abort-controller 16ms (cache stale)
+249 silly packumentCache full:https://registry.npmjs.org/bare-abort-controller set size:6812 disposed:false
+250 silly placeDep ROOT bare-events@2.8.2 OK for: bare-fs@4.5.5 want: ^2.5.4
+251 silly placeDep ROOT bare-path@3.0.0 OK for: bare-fs@4.5.5 want: ^3.0.0
+252 silly placeDep ROOT bare-stream@2.8.1 OK for: bare-fs@4.5.5 want: ^2.6.4
+253 silly placeDep ROOT bare-url@2.3.2 OK for: bare-fs@4.5.5 want: ^2.2.2
+254 silly fetch manifest bare-os@^3.0.1
+255 silly packumentCache full:https://registry.npmjs.org/bare-os cache-miss
+256 silly fetch manifest teex@^1.0.1
+257 silly packumentCache full:https://registry.npmjs.org/teex cache-miss
+258 http fetch GET 200 https://registry.npmjs.org/teex 11ms (cache stale)
+259 silly packumentCache full:https://registry.npmjs.org/teex set size:5952 disposed:false
+260 http fetch GET 200 https://registry.npmjs.org/bare-os 13ms (cache stale)
+261 silly packumentCache full:https://registry.npmjs.org/bare-os set size:66552 disposed:false
+262 silly placeDep ROOT bare-os@3.8.0 OK for: bare-path@3.0.0 want: ^3.0.1
+263 silly placeDep ROOT teex@1.0.1 OK for: bare-stream@2.8.1 want: ^1.0.1
+264 silly placeDep ROOT events-universal@1.0.1 OK for: streamx@2.23.0 want: ^1.0.0
+265 silly placeDep ROOT text-decoder@1.2.7 OK for: streamx@2.23.0 want: ^1.1.0
+266 silly placeDep ROOT buffer-crc32@0.2.13 OK for: yauzl@3.2.1 want: ~0.2.3
+267 silly placeDep ROOT pend@1.2.0 OK for: yauzl@3.2.1 want: ~1.2.0
+268 silly placeDep node_modules/mongodb-memory-server-core bson@7.2.0 OK for: mongodb@7.1.0 want: ^7.1.1
+269 silly placeDep node_modules/mongodb-memory-server-core mongodb-connection-string-url@7.0.1 OK for: mongodb@7.1.0 want: ^7.0.0
+270 silly fetch manifest @types/whatwg-url@^13.0.0
+271 silly packumentCache full:https://registry.npmjs.org/@types%2fwhatwg-url cache-miss
+272 http fetch GET 200 https://registry.npmjs.org/@types%2fwhatwg-url 8ms (cache stale)
+273 silly packumentCache full:https://registry.npmjs.org/@types%2fwhatwg-url set size:25750 disposed:false
+274 silly placeDep node_modules/mongodb-memory-server-core @types/whatwg-url@13.0.0 OK for: mongodb-connection-string-url@7.0.1 want: ^13.0.0
+275 silly reify mark retired [
+275 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\agent-base'
+275 silly reify ]
+276 silly reify mark retired [
+276 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\async-mutex'
+276 silly reify ]
+277 silly reify mark retired [ 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\b4a' ]
+278 silly reify mark retired [
+278 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\bare-events'
+278 silly reify ]
+279 silly reify mark retired [
+279 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\bare-fs'
+279 silly reify ]
+280 silly reify mark retired [
+280 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\bare-os'
+280 silly reify ]
+281 silly reify mark retired [
+281 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\bare-path'
+281 silly reify ]
+282 silly reify mark retired [
+282 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\bare-stream'
+282 silly reify ]
+283 silly reify mark retired [
+283 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\bare-url'
+283 silly reify ]
+284 silly reify mark retired [
+284 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\buffer-crc32'
+284 silly reify ]
+285 silly reify mark retired [
+285 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\commondir'
+285 silly reify ]
+286 silly reify mark retired [
+286 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\camelcase'
+286 silly reify ]
+287 silly reify mark retired [
+287 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\events-universal'
+287 silly reify ]
+288 silly reify mark retired [
+288 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\fast-fifo'
+288 silly reify ]
+289 silly reify mark retired [
+289 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\find-up'
+289 silly reify ]
+290 silly reify mark retired [
+290 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\find-cache-dir'
+290 silly reify ]
+291 silly reify mark retired [
+291 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\follow-redirects'
+291 silly reify ]
+292 silly reify mark retired [
+292 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\https-proxy-agent'
+292 silly reify ]
+293 silly reify mark retired [
+293 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\locate-path'
+293 silly reify ]
+294 silly reify mark retired [
+294 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\make-dir'
+294 silly reify ]
+295 silly reify mark retired [
+295 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\mongodb-memory-server'
+295 silly reify ]
+296 silly reify mark retired [
+296 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\mongodb-memory-server-core'
+296 silly reify ]
+297 silly reify mark retired [
+297 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\new-find-package-json'
+297 silly reify ]
+298 silly reify mark retired [
+298 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\p-try'
+298 silly reify ]
+299 silly reify mark retired [
+299 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\p-limit'
+299 silly reify ]
+300 silly reify mark retired [
+300 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\p-locate'
+300 silly reify ]
+301 silly reify mark retired [
+301 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\path-exists'
+301 silly reify ]
+302 silly reify mark retired [
+302 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\pend'
+302 silly reify ]
+303 silly reify mark retired [
+303 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\pkg-dir'
+303 silly reify ]
+304 silly reify mark retired [
+304 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\semver',
+304 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bin\\semver',
+304 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bin\\semver.cmd',
+304 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bin\\semver.ps1'
+304 silly reify ]
+305 silly reify mark retired [
+305 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\streamx'
+305 silly reify ]
+306 silly reify mark retired [
+306 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\teex'
+306 silly reify ]
+307 silly reify mark retired [
+307 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\tar-stream'
+307 silly reify ]
+308 silly reify mark retired [
+308 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\text-decoder'
+308 silly reify ]
+309 silly reify mark retired [
+309 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\tslib'
+309 silly reify ]
+310 silly reify mark retired [
+310 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\yauzl'
+310 silly reify ]
+311 silly reify moves {
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\agent-base': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.agent-base-0mG0nokk',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\async-mutex': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.async-mutex-mWyEHuXI',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\b4a': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.b4a-bi9SYAGa',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\bare-events': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bare-events-L880zyxR',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\bare-fs': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bare-fs-NR7tbVlN',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\bare-os': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bare-os-gZsaRH3A',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\bare-path': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bare-path-mV5b1Sgs',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\bare-stream': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bare-stream-5YVMYozi',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\bare-url': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bare-url-LCdpzuRC',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\buffer-crc32': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.buffer-crc32-W2ojxGvi',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\commondir': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.commondir-8ojJOlZ5',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\camelcase': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.camelcase-0AY4CefO',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\events-universal': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.events-universal-JxANcSa8',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\fast-fifo': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.fast-fifo-wJCqKJ72',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\find-up': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.find-up-BJ2VimUk',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\find-cache-dir': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.find-cache-dir-cHv7XwKG',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\follow-redirects': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.follow-redirects-sK7758rE',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\https-proxy-agent': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.https-proxy-agent-qEM8iJUQ',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\locate-path': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.locate-path-s4bvN7CM',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\make-dir': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.make-dir-AMEz0Zdx',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\mongodb-memory-server': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.mongodb-memory-server-cxNFIieV',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\mongodb-memory-server-core': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.mongodb-memory-server-core-FpBhwxez',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\new-find-package-json': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.new-find-package-json-Xwq9UokC',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\p-try': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.p-try-GFGu2NCe',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\p-limit': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.p-limit-c9o47Ff4',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\p-locate': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.p-locate-qSJFZ5Ls',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\path-exists': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.path-exists-C46PHe3Z',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\pend': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.pend-eQa5zqT8',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\pkg-dir': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.pkg-dir-2j8XAqwq',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\semver': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.semver-gb4YcrYY',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bin\\semver': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bin\\.semver-InDGw18q',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bin\\semver.cmd': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bin\\.semver.cmd-ZdUFgFG1',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bin\\semver.ps1': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.bin\\.semver.ps1-AqGtETvq',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\streamx': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.streamx-7Za58WrW',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\teex': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.teex-nOy06TZT',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\tar-stream': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.tar-stream-TSwsabJv',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\text-decoder': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.text-decoder-ffou2fhR',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\tslib': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.tslib-q3VplJZs',
+311 silly reify   'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\yauzl': 'C:\\Users\\n1j\\Desktop\\BookStoreAppMERN-main\\node_modules\\.yauzl-9K7ERFke'
+311 silly reify }
+312 verbose stack Error: EBUSY: resource busy or locked, rename 'C:\Users\n1j\Desktop\BookStoreAppMERN-main\node_modules\mongodb-memory-server' -> 'C:\Users\n1j\Desktop\BookStoreAppMERN-main\node_modules\.mongodb-memory-server-cxNFIieV'
+312 verbose stack     at async Object.rename (node:internal/fs/promises:782:10)
+312 verbose stack     at async moveFile (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\fs\lib\move-file.js:30:5)
+312 verbose stack     at async Promise.allSettled (index 20)
+312 verbose stack     at async #reifyPackages (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:309:11)
+312 verbose stack     at async Arborist.reify (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:121:5)
+312 verbose stack     at async Install.exec (C:\Program Files\nodejs\node_modules\npm\lib\commands\install.js:151:5)
+312 verbose stack     at async Npm.exec (C:\Program Files\nodejs\node_modules\npm\lib\npm.js:208:9)
+312 verbose stack     at async module.exports (C:\Program Files\nodejs\node_modules\npm\lib\cli\entry.js:67:5)
+313 error code EBUSY
+314 error syscall rename
+315 error path C:\Users\n1j\Desktop\BookStoreAppMERN-main\node_modules\mongodb-memory-server
+316 error dest C:\Users\n1j\Desktop\BookStoreAppMERN-main\node_modules\.mongodb-memory-server-cxNFIieV
+317 error errno -4082
+318 error EBUSY: resource busy or locked, rename 'C:\Users\n1j\Desktop\BookStoreAppMERN-main\node_modules\mongodb-memory-server' -> 'C:\Users\n1j\Desktop\BookStoreAppMERN-main\node_modules\.mongodb-memory-server-cxNFIieV'
+319 silly unfinished npm timer reify 1773770876414
+320 silly unfinished npm timer reify:retireShallow 1773770877669
+321 verbose cwd C:\Users\n1j\Desktop\BookStoreAppMERN-main
+322 verbose os Windows_NT 10.0.26200
+323 verbose node v24.14.0
+324 verbose npm  v11.9.0
+325 verbose exit -4082
+326 verbose code -4082
+327 error A complete log of this run can be found in: C:\Users\n1j\Desktop\BookStoreAppMERN-main\.npm-cache\_logs\2026-03-17T18_07_55_231Z-debug-0.log

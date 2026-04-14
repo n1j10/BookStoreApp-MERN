@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  
+}
+
+button{
+  background: #F86D72;
+  color: white;
+  border-radius: 13px;
+  padding: 10px;
+  width: 100px;
+  transition: 0.3s all;
+}
+button:hover{
+  background:#dd6165
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

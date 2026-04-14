@@ -1,0 +1,222 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.9.0
+2 info using node@v24.14.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\n1j\Desktop\BookStoreAppMERN-main\.npmrc
+5 silly config load:file:C:\Users\n1j\.npmrc
+6 silly config load:file:C:\Users\n1j\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install mongodb-memory-server@latest
+8 verbose argv "install" "mongodb-memory-server@latest" "--cache" "./.npm-cache" "--prefer-offline" "--no-progress"
+9 verbose logfile logs-max:10 dir:C:\Users\n1j\Desktop\BookStoreAppMERN-main\.npm-cache\_logs\2026-03-17T18_12_35_021Z-
+10 verbose logfile C:\Users\n1j\Desktop\BookStoreAppMERN-main\.npm-cache\_logs\2026-03-17T18_12_35_021Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+13 silly packumentCache corgi:https://registry.npmjs.org/mongodb-memory-server cache-miss
+14 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+15 http fetch GET 200 https://registry.npmjs.org/mongodb-memory-server 106ms (cache stale)
+16 silly packumentCache corgi:https://registry.npmjs.org/mongodb-memory-server set size:541943 disposed:false
+17 silly idealTree buildDeps
+18 silly fetch manifest mongodb-memory-server@11.0.1
+19 silly packumentCache full:https://registry.npmjs.org/mongodb-memory-server cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/mongodb-memory-server 12ms (cache stale)
+21 silly packumentCache full:https://registry.npmjs.org/mongodb-memory-server set size:1038728 disposed:false
+22 silly placeDep ROOT mongodb-memory-server@11.0.1 REPLACE for: bookstore@1.0.0 want: 11.0.1
+23 silly reify moves {}
+24 silly audit bulk request {
+24 silly audit   '@mongodb-js/saslprep': [ '1.4.6' ],
+24 silly audit   '@types/webidl-conversions': [ '7.0.3' ],
+24 silly audit   '@types/whatwg-url': [ '11.0.5', '13.0.0' ],
+24 silly audit   accepts: [ '2.0.0' ],
+24 silly audit   'agent-base': [ '7.1.4' ],
+24 silly audit   anymatch: [ '3.1.3' ],
+24 silly audit   'append-field': [ '1.0.0' ],
+24 silly audit   'async-mutex': [ '0.5.0' ],
+24 silly audit   b4a: [ '1.8.0' ],
+24 silly audit   'balanced-match': [ '4.0.4' ],
+24 silly audit   'bare-events': [ '2.8.2' ],
+24 silly audit   'bare-fs': [ '4.5.5' ],
+24 silly audit   'bare-os': [ '3.8.0' ],
+24 silly audit   'bare-path': [ '3.0.0' ],
+24 silly audit   'bare-stream': [ '2.8.1' ],
+24 silly audit   'bare-url': [ '2.3.2' ],
+24 silly audit   bcrypt: [ '6.0.0' ],
+24 silly audit   'binary-extensions': [ '2.3.0' ],
+24 silly audit   'body-parser': [ '2.2.2' ],
+24 silly audit   'brace-expansion': [ '5.0.4' ],
+24 silly audit   braces: [ '3.0.3' ],
+24 silly audit   bson: [ '6.10.4', '7.2.0' ],
+24 silly audit   'buffer-crc32': [ '0.2.13' ],
+24 silly audit   'buffer-equal-constant-time': [ '1.0.1' ],
+24 silly audit   'buffer-from': [ '1.1.2' ],
+24 silly audit   busboy: [ '1.6.0' ],
+24 silly audit   bytes: [ '3.1.2' ],
+24 silly audit   'call-bind-apply-helpers': [ '1.0.2' ],
+24 silly audit   'call-bound': [ '1.0.4' ],
+24 silly audit   camelcase: [ '6.3.0' ],
+24 silly audit   chokidar: [ '3.6.0' ],
+24 silly audit   commondir: [ '1.0.1' ],
+24 silly audit   'concat-stream': [ '2.0.0' ],
+24 silly audit   'content-disposition': [ '1.0.0' ],
+24 silly audit   'content-type': [ '1.0.5' ],
+24 silly audit   cookie: [ '0.7.2' ],
+24 silly audit   'cookie-parser': [ '1.4.7' ],
+24 silly audit   'cookie-signature': [ '1.0.6', '1.2.2' ],
+24 silly audit   cors: [ '2.8.6' ],
+24 silly audit   debug: [ '4.4.3' ],
+24 silly audit   depd: [ '2.0.0' ],
+24 silly audit   dotenv: [ '17.3.1' ],
+24 silly audit   'dunder-proto': [ '1.0.1' ],
+24 silly audit   'ecdsa-sig-formatter': [ '1.0.11' ],
+24 silly audit   'ee-first': [ '1.1.1' ],
+24 silly audit   encodeurl: [ '2.0.0' ],
+24 silly audit   'es-define-property': [ '1.0.1' ],
+24 silly audit   'es-errors': [ '1.3.0' ],
+24 silly audit   'es-object-atoms': [ '1.1.1' ],
+24 silly audit   'escape-html': [ '1.0.3' ],
+24 silly audit   etag: [ '1.8.1' ],
+24 silly audit   'events-universal': [ '1.0.1' ],
+24 silly audit   express: [ '5.2.1' ],
+24 silly audit   'fast-fifo': [ '1.3.2' ],
+24 silly audit   'fill-range': [ '7.1.1' ],
+24 silly audit   finalhandler: [ '2.1.0' ],
+24 silly audit   'find-cache-dir': [ '3.3.2' ],
+24 silly audit   'find-up': [ '4.1.0' ],
+24 silly audit   'follow-redirects': [ '1.15.11' ],
+24 silly audit   forwarded: [ '0.2.0' ],
+24 silly audit   fresh: [ '2.0.0' ],
+24 silly audit   fsevents: [ '2.3.3' ],
+24 silly audit   'function-bind': [ '1.1.2' ],
+24 silly audit   'get-intrinsic': [ '1.3.0' ],
+24 silly audit   'get-proto': [ '1.0.1' ],
+24 silly audit   'glob-parent': [ '5.1.2' ],
+24 silly audit   gopd: [ '1.2.0' ],
+24 silly audit   'has-flag': [ '3.0.0' ],
+24 silly audit   'has-symbols': [ '1.1.0' ],
+24 silly audit   hasown: [ '2.0.2' ],
+24 silly audit   'http-errors': [ '2.0.1' ],
+24 silly audit   'https-proxy-agent': [ '7.0.6' ],
+24 silly audit   'iconv-lite': [ '0.7.2' ],
+24 silly audit   'ignore-by-default': [ '1.0.1' ],
+24 silly audit   inherits: [ '2.0.4' ],
+24 silly audit   'ipaddr.js': [ '1.9.1' ],
+24 silly audit   'is-binary-path': [ '2.1.0' ],
+24 silly audit   'is-extglob': [ '2.1.1' ],
+24 silly audit   'is-glob': [ '4.0.3' ],
+24 silly audit   'is-number': [ '7.0.0' ],
+24 silly audit   'is-promise': [ '4.0.0' ],
+24 silly audit   jsonwebtoken: [ '9.0.3' ],
+24 silly audit   jwa: [ '2.0.1' ],
+24 silly audit   jws: [ '4.0.1' ],
+24 silly audit   kareem: [ '2.6.3' ],
+24 silly audit   'locate-path': [ '5.0.0' ],
+24 silly audit   'lodash.includes': [ '4.3.0' ],
+24 silly audit   'lodash.isboolean': [ '3.0.3' ],
+24 silly audit   'lodash.isinteger': [ '4.0.4' ],
+24 silly audit   'lodash.isnumber': [ '3.0.3' ],
+24 silly audit   'lodash.isplainobject': [ '4.0.6' ],
+24 silly audit   'lodash.isstring': [ '4.0.1' ],
+24 silly audit   'lodash.once': [ '4.1.1' ],
+24 silly audit   'make-dir': [ '3.1.0' ],
+24 silly audit   semver: [ '6.3.1', '7.7.4' ],
+24 silly audit   'math-intrinsics': [ '1.1.0' ],
+24 silly audit   'media-typer': [ '1.1.0', '0.3.0' ],
+24 silly audit   'memory-pager': [ '1.5.0' ],
+24 silly audit   'merge-descriptors': [ '2.0.0' ],
+24 silly audit   'mime-db': [ '1.54.0', '1.52.0' ],
+24 silly audit   'mime-types': [ '3.0.1', '2.1.35' ],
+24 silly audit   minimatch: [ '10.2.4' ],
+24 silly audit   mongodb: [ '6.20.0', '7.1.0' ],
+24 silly audit   'mongodb-connection-string-url': [ '3.0.2', '7.0.1' ],
+24 silly audit   'mongodb-memory-server-core': [ '11.0.1' ],
+24 silly audit   mongoose: [ '8.23.0' ],
+24 silly audit   mpath: [ '0.9.0' ],
+24 silly audit   mquery: [ '5.0.0' ],
+24 silly audit   ms: [ '2.1.3' ],
+24 silly audit   multer: [ '2.1.1' ],
+24 silly audit   'type-is': [ '1.6.18', '2.0.1' ],
+24 silly audit   negotiator: [ '1.0.0' ],
+24 silly audit   'new-find-package-json': [ '2.0.0' ],
+24 silly audit   'node-addon-api': [ '8.5.0' ],
+24 silly audit   'node-gyp-build': [ '4.8.4' ],
+24 silly audit   nodemon: [ '3.1.14' ],
+24 silly audit   'normalize-path': [ '3.0.0' ],
+24 silly audit   'object-assign': [ '4.1.1' ],
+24 silly audit   'object-inspect': [ '1.13.4' ],
+24 silly audit   'on-finished': [ '2.4.1' ],
+24 silly audit   once: [ '1.4.0' ],
+24 silly audit   'p-limit': [ '2.3.0' ],
+24 silly audit   'p-locate': [ '4.1.0' ],
+24 silly audit   'p-try': [ '2.2.0' ],
+24 silly audit   parseurl: [ '1.3.3' ],
+24 silly audit   'path-exists': [ '4.0.0' ],
+24 silly audit   'path-to-regexp': [ '8.3.0' ],
+24 silly audit   pend: [ '1.2.0' ],
+24 silly audit   picomatch: [ '2.3.1' ],
+24 silly audit   'pkg-dir': [ '4.2.0' ],
+24 silly audit   'proxy-addr': [ '2.0.7' ],
+24 silly audit   'pstree.remy': [ '1.1.8' ],
+24 silly audit   punycode: [ '2.3.1' ],
+24 silly audit   qs: [ '6.15.0' ],
+24 silly audit   'range-parser': [ '1.2.1' ],
+24 silly audit   'raw-body': [ '3.0.2' ],
+24 silly audit   'readable-stream': [ '3.6.2' ],
+24 silly audit   readdirp: [ '3.6.0' ],
+24 silly audit   router: [ '2.2.0' ],
+24 silly audit   'safe-buffer': [ '5.2.1' ],
+24 silly audit   'safer-buffer': [ '2.1.2' ],
+24 silly audit   send: [ '1.2.0' ],
+24 silly audit   'serve-static': [ '2.2.0' ],
+24 silly audit   setprototypeof: [ '1.2.0' ],
+24 silly audit   'side-channel': [ '1.1.0' ],
+24 silly audit   'side-channel-list': [ '1.0.0' ],
+24 silly audit   'side-channel-map': [ '1.0.1' ],
+24 silly audit   'side-channel-weakmap': [ '1.0.2' ],
+24 silly audit   sift: [ '17.1.3' ],
+24 silly audit   'simple-update-notifier': [ '2.0.0' ],
+24 silly audit   'sparse-bitfield': [ '3.0.3' ],
+24 silly audit   statuses: [ '2.0.2' ],
+24 silly audit   streamsearch: [ '1.1.0' ],
+24 silly audit   streamx: [ '2.23.0' ],
+24 silly audit   string_decoder: [ '1.3.0' ],
+24 silly audit   'supports-color': [ '5.5.0' ],
+24 silly audit   'tar-stream': [ '3.1.8' ],
+24 silly audit   teex: [ '1.0.1' ],
+24 silly audit   'text-decoder': [ '1.2.7' ],
+24 silly audit   'to-regex-range': [ '5.0.1' ],
+24 silly audit   toidentifier: [ '1.0.1' ],
+24 silly audit   touch: [ '3.1.1' ],
+24 silly audit   tr46: [ '5.1.1' ],
+24 silly audit   tslib: [ '2.8.1' ],
+24 silly audit   typedarray: [ '0.0.6' ],
+24 silly audit   undefsafe: [ '2.0.5' ],
+24 silly audit   unpipe: [ '1.0.0' ],
+24 silly audit   'util-deprecate': [ '1.0.2' ],
+24 silly audit   vary: [ '1.1.2' ],
+24 silly audit   'webidl-conversions': [ '7.0.0' ],
+24 silly audit   'whatwg-url': [ '14.2.0' ],
+24 silly audit   wrappy: [ '1.0.2' ],
+24 silly audit   yauzl: [ '3.2.1' ],
+24 silly audit   'mongodb-memory-server': [ '11.0.1' ]
+24 silly audit }
+25 http cache mongodb-memory-server@https://registry.npmjs.org/mongodb-memory-server/-/mongodb-memory-server-11.0.1.tgz 0ms (cache hit)
+26 http cache mongodb-connection-string-url@https://registry.npmjs.org/mongodb-connection-string-url/-/mongodb-connection-string-url-7.0.1.tgz 0ms (cache hit)
+27 http cache mongodb-memory-server-core@https://registry.npmjs.org/mongodb-memory-server-core/-/mongodb-memory-server-core-11.0.1.tgz 0ms (cache hit)
+28 http cache @types/whatwg-url@https://registry.npmjs.org/@types/whatwg-url/-/whatwg-url-13.0.0.tgz 0ms (cache hit)
+29 http cache mongodb@https://registry.npmjs.org/mongodb/-/mongodb-7.1.0.tgz 0ms (cache hit)
+30 http cache bson@https://registry.npmjs.org/bson/-/bson-7.2.0.tgz 0ms (cache hit)
+31 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 558ms
+32 silly audit report {}
+33 info run mongodb-memory-server@11.0.1 postinstall node_modules/mongodb-memory-server node ./postinstall.js
+34 info run mongodb-memory-server@11.0.1 postinstall { code: 0, signal: null }
+35 silly ADD node_modules/mongodb-memory-server
+36 silly ADD node_modules/mongodb-memory-server-core
+37 silly ADD node_modules/mongodb-memory-server-core/node_modules/mongodb-connection-string-url
+38 silly ADD node_modules/mongodb-memory-server-core/node_modules/mongodb
+39 silly ADD node_modules/mongodb-memory-server-core/node_modules/bson
+40 silly ADD node_modules/mongodb-memory-server-core/node_modules/@types/whatwg-url
+41 verbose cwd C:\Users\n1j\Desktop\BookStoreAppMERN-main
+42 verbose os Windows_NT 10.0.26200
+43 verbose node v24.14.0
+44 verbose npm  v11.9.0
+45 verbose exit 0
+46 info ok

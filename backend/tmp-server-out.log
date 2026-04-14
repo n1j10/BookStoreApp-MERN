@@ -1,0 +1,4 @@
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+DNS servers configured for MongoDB SRV lookup: 1.1.1.1, 8.8.8.8
+server is running on port 5000
+MongoDB connected successfully

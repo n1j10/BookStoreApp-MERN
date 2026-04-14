@@ -1,0 +1,146 @@
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+const CartContext = createContext();
+
+export const CartProvider = ({ children }) => {
+    const [cart, setCart] = useState({
+        items: [],
+        totalAmount: 0,
+        totalItems: 0
+    });
+    const [loading, setLoading] = useState(false);
+
+    // Get cart from backend
+    const getCart = async () => {
+        try {
+            setLoading(true);
+            const response = await fetch('http://localhost:5000/cart', {
+                credentials: 'include'
+            });
+            
+            if (response.ok) {
+                const data = await response.json();
+                setCart(data.cart);
+            }
+        } catch (error) {
+            console.error('Error getting cart:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // Add item to cart
+    const addToCart = async (bookId) => {
+        try {
+            setLoading(true);
+            const response = await fetch('http://localhost:5000/cart/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify({ bookId, quantity: 1 })
+            });
+
+            const data = await response.json();
+            
+            if (response.ok) {
+                setCart(data.cart);
+                alert('Added to cart!');
+            } else {
+                alert(data.message);
+            }
+        } catch (error) {
+            alert('Error adding to cart');
+            console.error('Error:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // Update quantity
+    const updateQuantity = async (bookId, quantity) => {
+        try {
+            setLoading(true);
+            const response = await fetch('http://localhost:5000/cart/update', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify({ bookId, quantity })
+            });
+
+            const data = await response.json();
+            
+            if (response.ok) {
+                setCart(data.cart);
+            } else {
+                alert(data.message);
+            }
+        } catch (error) {
+            alert('Error updating cart');
+            console.error('Error:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // Remove item
+  
+
+    // Clear cart
+    const clearCart = async () => {
+        try {
+            setLoading(true);
+            const response = await fetch('http://localhost:5000/cart/clear', {
+                method: 'DELETE',
+                credentials: 'include'
+            });
+
+            const data = await response.json();
+            
+            if (response.ok) {
+                setCart(data.cart);
+            } else {
+                alert(data.message);
+            }
+        } catch (error) {
+            alert('Error clearing cart');
+            console.error('Error:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // Load cart when component mounts
+    useEffect(() => {
+        getCart();
+    }, []);
+
+    return (
+        <CartContext.Provider value={{
+            // Cart data
+            cart,
+            loading,
+            
+            // Functions
+            addToCart,
+            updateQuantity,
+          
+            clearCart,
+            getCart
+        }}>
+            {children}
+        </CartContext.Provider>
+    );
+};
+
+// Hook to use cart
+export const useCart = () => {
+    const context = useContext(CartContext);
+    if (!context) {
+        throw new Error('useCart must be used within CartProvider');
+    }
+    return context;
+};
