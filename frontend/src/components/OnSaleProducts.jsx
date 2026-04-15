@@ -42,7 +42,7 @@ function OnSaleProducts() {
         
           <div key={book._id} className='flex flex-col items-center  p-4 rounded-lg'>
                       <Link to={`/bookDetails/${book?._id}`}>
-                      <img className='w-full h-[450px] ' src={getImageSrc(book.coverImage)} />
+                      <img className='w-full h-[450px] ' src={getImageSrc(book.coverImage)} alt={book?.title || "Book cover"} />
                      
                       <h6 className='text-center my-3'>{book.title}</h6>
                       </Link>

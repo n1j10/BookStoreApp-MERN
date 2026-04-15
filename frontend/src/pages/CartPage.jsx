@@ -6,7 +6,7 @@ function CartPage() {
     const {cart,updateCart,removeFromCart} = useCart()
 
     if(!cart || cart.items.length === 0){
-         <div className="min-h-screen flex items-center justify-center mt-48">
+      return <div className="min-h-screen flex items-center justify-center mt-48">
         <p className="text-gray-500 text-lg">🛒 Your Cart Is Empty</p>
       </div>
 
@@ -19,8 +19,8 @@ function CartPage() {
 
         <div className='space-y-4'>
             {cart?.items?.map((item)=> (
-                <div className='flex items-center gap-4 border rounded-lg p-4 shadow-sm'>
-                    <img src={getImageSrc(item?.book?.coverImage)} className='rounded w-24 h-32 object-cover'/>
+                <div key={item?.book?._id} className='flex items-center gap-4 border rounded-lg p-4 shadow-sm'>
+                    <img src={getImageSrc(item?.book?.coverImage)} alt={item?.book?.title || "Book cover"} className='rounded w-24 h-32 object-cover'/>
 
                     <div className='flex-1'>
                     <h2 className='font-semibold'>{item?.book?.title}</h2>

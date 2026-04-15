@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useAuth } from '../auth/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { Heart, ShoppingBasket } from 'lucide-react';
@@ -7,7 +7,7 @@ import { useCart } from '../auth/CartContext';
 function Header() {
 
 
-     const { user, logout, loading, isAuthenticated, isAdmin } = useAuth();
+     const { user, logout, isAuthenticated, isAdmin } = useAuth();
        const {cart} = useCart()
    const navLinks = [
         { name: 'Home', path: '/' },
@@ -15,8 +15,6 @@ function Header() {
         { name: 'Contact', path: '/' },
         { name: 'About', path: '/' },
     ];
-
-    const ref = React.useRef(null)
 
     const [isScrolled, setIsScrolled] = React.useState(false);
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -94,7 +92,7 @@ function Header() {
 
                 {/* Logo */}
                 <a href="https://prebuiltui.com shrink-0" className="flex items-center w-50 h-50 gap-2">
-                    <img className=' h-32 object-contain' src='/logo.png' />
+                    <img className=' h-32 object-contain' src='/logo.png' alt='Book Store logo' />
                 </a>
 
                 {/* Desktop Nav */}
@@ -123,12 +121,12 @@ function Header() {
 
                 {/* Mobile Menu */}
                 <div className={`fixed top-0 left-0 w-full h-screen bg-white text-base flex flex-col md:hidden items-center justify-center gap-6 font-medium text-gray-800 transition-all duration-500 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
-                    <a className="absolute top-4 right-4" onClick={() => setIsMenuOpen(false)}>
+                    <button type="button" className="absolute top-4 right-4 !bg-transparent !border-none !text-gray-800" onClick={() => setIsMenuOpen(false)}>
                         <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                             <line x1="18" y1="6" x2="6" y2="18" />
                             <line x1="6" y1="6" x2="18" y2="18" />
                         </svg>
-                    </a>
+                    </button>
 
                     {navLinks.map((link, i) => (
                         <a key={i} href={link.path} onClick={() => setIsMenuOpen(false)}>

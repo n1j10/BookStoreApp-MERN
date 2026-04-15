@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink, Outlet } from "react-router-dom";
-import { Menu, X, BookOpen, PlusCircle, Home, MenuIcon } from "lucide-react";
+import { Menu, X, BookOpen, PlusCircle, Home } from "lucide-react";
 
 function AdminLayout() {
       const [open, setOpen] = useState(false);
@@ -28,13 +28,14 @@ function AdminLayout() {
           <aside className={` relative h-screen flex flex-col  transition-transform bg-slate-900  w-64 text-slate-100 ${open? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}>
 
             
-             <a
-              className="md:hidden !bg-transparent absolute right-0 !text-white rounded-md p-2 hover:bg-slate-800"
+             <button
+              type="button"
+              className="md:hidden !bg-transparent !border-none absolute right-0 !text-white rounded-md p-2 hover:bg-slate-800"
               onClick={() => setOpen(false)}
               aria-label="Close sidebar"
             >
               <X className="h-5 w-5" />
-            </a>
+            </button>
 
             <nav className='flex-1 space-y-1 p-3 mt-15'>
                 <NavLink to="/admin">

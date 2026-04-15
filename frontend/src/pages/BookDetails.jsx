@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useCart } from '../auth/CartContext'
 import { getImageSrc } from '../utils/getImageSrc'
 function BookDetails() {
 
     const {id} = useParams()
-    const navigate = useNavigate()
     const [book,setBook] = useState(null)
     const [loading, setLoading] = useState(true);
  const [message, setMessage] = useState("");
@@ -41,7 +40,7 @@ function BookDetails() {
         <div className='grid grid-cols-1 md:grid-cols-2  gap-10 items-start  bg-white shadow-md rounded-lg p-6'>
 
         <div className='flex justify-center'>
-        <img className='w-80 h-[450px] object-cover rounded-lg shadow' src={getImageSrc(book?.coverImage)}/>
+        <img className='w-80 h-[450px] object-cover rounded-lg shadow' src={getImageSrc(book?.coverImage)} alt={book?.title || "Book cover"}/>
 
 
         </div>

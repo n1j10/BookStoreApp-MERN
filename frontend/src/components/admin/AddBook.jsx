@@ -7,7 +7,7 @@ function AddBook() {
     const [loadingCats, setLoadingCats] = useState(true);
     const [msg, setMsg] = useState(null)
      const [submitting, setSubmitting] = useState(false);
- const { isAuthenticated, isAdmin, user , loading} = useAuth()
+ const { isAuthenticated, isAdmin, loading } = useAuth()
      const [preview, setPreview] = useState(null);
     const navigate = useNavigate()
     
@@ -22,7 +22,6 @@ function AddBook() {
     discountPercent: "",
     isFeautred: false,  
     isOnSale: false,
-    discountPercent:false,
     coverImage: null,    
     })
 
@@ -57,7 +56,7 @@ function AddBook() {
     const onChange =(e)=>{
       const { name, type, value, checked, files } = e.target;
 
-    if(type=="file"){
+    if(type === "file"){
       const file = files?.[0] || null;
 
       setForm((p) => ({ ...p, [name]: file }));
@@ -66,7 +65,7 @@ function AddBook() {
       return
     }
 
-     if(type=="checkbox"){
+     if(type === "checkbox"){
      
       setForm((p) => ({ ...p, [name]: checked }));
       return

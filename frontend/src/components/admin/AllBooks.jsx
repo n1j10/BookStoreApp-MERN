@@ -9,7 +9,7 @@ function Allbooks() {
     const navigate = useNavigate()
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null)
-  const { isAuthenticated, isAdmin, user } = useAuth()
+  const { isAuthenticated, isAdmin } = useAuth()
     useEffect(()=>{
 
       const fetchBooks = async()=>{
@@ -68,9 +68,9 @@ function Allbooks() {
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 '>
 
         {bookList?.map((book)=>(
-          <a href={`/admin/update-book/${book?._id}`}>
+          <a key={book._id} href={`/admin/update-book/${book?._id}`}>
          <div className='flex flex-col gap-5 border border-gray-300 p-4 rounded-lg'>
-            <img src={getImageSrc(book.coverImage) }/>
+            <img src={getImageSrc(book.coverImage) } alt={book?.title || "Book cover"} />
 
             <h6>{book?.title}</h6>
 

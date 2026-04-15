@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useCallback, useContext, useEffect, useState } from "react"
 
 export const AuthContext = createContext(null);
 
@@ -15,14 +15,10 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        checkAuthStatus()
-    }, [])
-
     const normalizeRole = (r) =>
         (r || "user").toString().trim().toLowerCase();
 
-    const checkAuthStatus = async () => {
+    const checkAuthStatus = useCallback(async () => {
         try {
             const response = await fetch("https://book-store-app-mern-xi.vercel.app/users/verify", {
                 method: "GET",
@@ -41,7 +37,11 @@ export const AuthProvider = ({ children }) => {
         } finally {
             setLoading(false)
         }
-    }
+    }, [])
+
+    useEffect(() => {
+        checkAuthStatus()
+    }, [checkAuthStatus])
 
     const login = async (credentials) => {
         try {
@@ -95,7 +95,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = async () => {
         try {
-            const response = await fetch("https://book-store-app-mern-xi.vercel.app/users/logout", {
+            await fetch("https://book-store-app-mern-xi.vercel.app/users/logout", {
                 method: "POST",
                 credentials: 'include',
             })
