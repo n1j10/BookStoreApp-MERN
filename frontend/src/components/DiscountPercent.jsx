@@ -12,7 +12,7 @@ function DiscountPercent() {
     fetch("https://book-store-app-mern-xi.vercel.app/books/getBooks")
       .then(res => res.json())
       .then(data => setBookList(data))
-      .catch(err => console.error("Error fetching books:", err));
+      .catch(err => console.error("Error fetching books :", err));
   }, []);
 
 
