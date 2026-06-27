@@ -1,22 +1,54 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { apiFetch, parseApiResponse } from "../utils/api";
 
 const CartContext = createContext();
 
+export const useCart = () => useContext(CartContext);
+
 
 export function CartProvider({children}){
+  
     const [cart , setCart] = useState(null)
 
 
     useEffect(()=>{
-        fetch("https://book-store-app-mern-xi.vercel.app/carts", {credentials:"include"}).then(res => res.json())
-        .then(data =>setCart(data.cart))
+      let isMounted = true
+
+      const loadCart = async () => {
+        try {
+          const response = await apiFetch("/carts", { credentials: "include" })
+          const result = await parseApiResponse(response, {
+            fallbackError: "Failed to load cart",
+          })
+
+
+          if (!isMounted) return
+
+          if (result.ok) {
+            setCart(result.data?.cart || null)
+          } else {
+            setCart(null)
+            console.error(result.message || "Failed to load cart")
+          }
+        } catch (error) {
+          if (!isMounted) return
+          setCart(null)
+          console.error("Failed to load cart", error)
+        }
+      }
+
+      loadCart()
+
+      return () => {
+        isMounted = false
+      }
     },[])
 
 
-    const addToCart = async (bookId) => {
-  console.log("sending bookId:", bookId);
+  const addToCart = async (bookId) => {
+  //! console.log("sending bookId:", bookId);
 
-  const res = await fetch("https://book-store-app-mern-xi.vercel.app/carts/add", {
+  const res = await apiFetch("/carts/add", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -24,58 +56,59 @@ export function CartProvider({children}){
     credentials: "include",
     body: JSON.stringify({ bookId })  // ✅ مهم
   });
+  const result = await parseApiResponse(res, {
+    fallbackError: "Failed to add item to cart",
+  });
 
-  const data = await res.json();
-  
-
-  
-  console.log("server response:", data);
-  setCart(data.cart);
+  if (!result.ok) {
+    alert(result.message || "Failed to add item to cart");
+    return;
+  }
+  // //! console.log("server response:", result.data);
+  setCart(result.data?.cart || null);
 };
 
 
      const updateCart = async(bookId, quantity)=>{
-        const res = await fetch("https://book-store-app-mern-xi.vercel.app/carts/update",{
-             method:"PUT",
+        const res = await apiFetch("/carts/update",{
+            method:"PUT",
             headers:{
               "Content-Type": "application/json" 
             },
             credentials:"include",
             body:JSON.stringify({bookId,quantity})
-
-       
         })
 
-       const data = await res.json();
-      if (!res.ok) {
+       const result = await parseApiResponse(res, {
+         fallbackError: "Error updating cart",
+       });
+      if (!result.ok) {
      
-      alert(data.message || "Error updating cart");
+      alert(result.message || "Error updating cart");
       return;
     }
 
          
-         setCart(data.cart);
+         setCart(result.data?.cart || null);
      }
-
 
      const removeFromCart = async(bookId)=>{
-         const res = await fetch(`https://book-store-app-mern-xi.vercel.app/carts/remove/${bookId}`,{
-            method:"DELETE",
-              credentials:"include",
-              
-
+         const res = await apiFetch(`/carts/remove/${bookId}`,{
+         method:"DELETE",
+         credentials:"include",
          })
-
-        const data = await res.json();
-         setCart(data.cart); 
+        const result = await parseApiResponse(res, {
+          fallbackError: "Failed to remove item from cart",
+        });
+        if (!result.ok) {
+          alert(result.message || "Failed to remove item from cart");
+          return;
+        }
+         setCart(result.data?.cart || null); 
      }
-
-
      return(
         <CartContext.Provider value={{cart,addToCart, updateCart, removeFromCart}}>{children}</CartContext.Provider>
      )
-
-
 }
 
-export const useCart = () => useContext(CartContext);
+

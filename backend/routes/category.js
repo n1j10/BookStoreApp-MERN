@@ -9,7 +9,6 @@ router.post("/createCategory", async(req,res)=>{
     if(!name){
          return res.status(400).json({ error: 'Name is required' });
     }
-
     const newCategory = new Category({
         name
     })

@@ -1,22 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import { useCart } from '../auth/CartContext';
 import { Link } from 'react-router-dom';
-import { getImageSrc } from '../utils/getImageSrc';
+import { apiFetch, parseApiResponse, buildApiUrl } from '../utils/api';
 
 function DiscountPercent() {
   const [bookList, setBookList] = useState([]);
  const [message, setMessage] = useState("");
+
+
+
   const {addToCart} = useCart()
 
   useEffect(() => {
-    fetch("https://book-store-app-mern-xi.vercel.app/books/getBooks")
-      .then(res => res.json())
-      .then(data => setBookList(data))
-      .catch(err => console.error("Error fetching books :", err));
+    let isMounted = true;
+
+    const loadBooks = async () => {
+      try {
+        const response = await apiFetch("/books/getBooks");
+        const result = await parseApiResponse(response, {
+          fallbackError: "Error fetching books",
+        });
+
+        if (!isMounted) return;
+        setBookList(Array.isArray(result.data) ? result.data : []);
+
+        if (!result.ok) {
+          console.error(result.message || "Error fetching books");
+        }
+      } catch (err) {
+        if (!isMounted) return;
+        setBookList([]);
+        console.error("Error fetching books :", err);
+      }
+    };
+
+    loadBooks();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
-
-
-
 
 
   const discountPercent = bookList?.filter(book => book.discountPercent > 0);
@@ -34,6 +57,7 @@ function DiscountPercent() {
         
          <div key={book._id} className="relative flex flex-col items-center border p-4 rounded-lg">
   {/* Badge */}
+
   {Number(book.discountPercent) > 0 && (
     <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-md">
       -{book.discountPercent}%
@@ -43,7 +67,7 @@ function DiscountPercent() {
   <Link to={`/bookDetails/${book?._id}`}>
     <img
       className="w-full h-[450px] object-cover rounded-md"
-      src={getImageSrc(book.coverImage)}
+      src={book.coverImage?.startsWith('http') ? book.coverImage : buildApiUrl(`/images/${book.coverImage?.replace(/^\/+/, '') || 'fallback'}`)}
       alt={book.title}
     />
     <h6 className="text-center my-3">{book.title}</h6>
@@ -79,9 +103,8 @@ function DiscountPercent() {
   >
     {book.stock === 0 ? "Out of stock" : "Add to Cart"}
   </button>
+  
 </div>
-
-        
         ))}
       </div>
     </div>

@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../auth/AuthContext'
-import { getImageSrc } from '../../utils/getImageSrc'
+import { apiFetch, parseApiResponse, buildApiUrl } from '../../utils/api'
 
 function Allbooks() {
+
 
     const [bookList,setBookList]= useState([])
     const navigate = useNavigate()
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null)
   const { isAuthenticated, isAdmin } = useAuth()
-    useEffect(()=>{
 
-      const fetchBooks = async()=>{
-        
+
+    useEffect(()=>{
+            const fetchBooks = async()=>{
         try {
-          const  res = await fetch("https://book-store-app-mern-xi.vercel.app/admin/getBooks",{
+          const  res = await apiFetch("/admin/getBooks",{
             method:"GET",
              credentials: "include",
             headers:{
@@ -23,18 +24,23 @@ function Allbooks() {
             }
           })
 
+
           if(res.status===401 || res.status === 403){
                setError('Not authorized')
              navigate("/", { replace: true });
              return
           }
 
-           if (!res.ok) {
-             throw new Error(`HTTP error! status: ${res.status}`)
-                }
+          const result = await parseApiResponse(res, {
+            fallbackError: "Failed to fetch books",
+          })
 
-          const data = await res.json()
-          setBookList(Array.isArray(data) ? data : [])
+          if (!result.ok) {
+            throw new Error(result.message || `HTTP error! status: ${res.status}`)
+          }
+
+          setBookList(Array.isArray(result.data) ? result.data : [])
+
             } catch (error) {
 
          console.error("Error fetching books:", error);
@@ -54,6 +60,7 @@ function Allbooks() {
       
     },[navigate, isAuthenticated, isAdmin])
 
+
      if (loading) {
         return <div>Loading...</div>
     }
@@ -70,7 +77,7 @@ function Allbooks() {
         {bookList?.map((book)=>(
           <a key={book._id} href={`/admin/update-book/${book?._id}`}>
          <div className='flex flex-col gap-5 border border-gray-300 p-4 rounded-lg'>
-            <img src={getImageSrc(book.coverImage) } alt={book?.title || "Book cover"} />
+            <img src={book.coverImage?.startsWith('http') ? book.coverImage : buildApiUrl(`/images/${book.coverImage?.replace(/^\/+/, '') || 'fallback'}`)} alt={book?.title || "Book cover"} />
 
             <h6>{book?.title}</h6>
 
@@ -86,5 +93,17 @@ function Allbooks() {
     </div>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default Allbooks

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { apiFetch, parseApiResponse } from '../utils/api'
 
 function Signup() {
 
@@ -16,7 +17,7 @@ function Signup() {
     setLoading(true)
 
     try{
-   const res = await fetch("https://book-store-app-mern-xi.vercel.app/users/register",{
+   const res = await apiFetch("/users/register",{
      method:"POST",
      headers: { "Content-Type": "application/json" },
     credentials: "include", 
@@ -24,9 +25,11 @@ function Signup() {
 
    })
 
-   const data = await res.json()
+   const result = await parseApiResponse(res, {
+    fallbackError: "Register failed",
+   })
 
-    if (!res.ok) throw new Error(data?.message || "Register failed");
+    if (!result.ok || !result.data) throw new Error(result.message || "Register failed");
 
     navigate("/")
 

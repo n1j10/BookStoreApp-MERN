@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { apiFetch, parseApiResponse } from '../utils/api'
 
 function Login() {
 
     const [form,setForm] = useState({email:"",password:""})
+
     const [loading ,setLoading] = useState(false)
+
     const [err,setErr] = useState("")
+
      const navigate = useNavigate()
 
 
@@ -14,17 +18,20 @@ function Login() {
    setErr("")
    setLoading(true)
    try {
-    const res = await fetch("https://book-store-app-mern-xi.vercel.app/users/signin",{
+    const res = await apiFetch("/users/signin",{
         method:"POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include", 
          body: JSON.stringify(form),
     })
 
-    const data = await res.json()
+    const result = await parseApiResponse(res, {
+      fallbackError: "Login failed",
+    })
 
-    if (!res.ok) throw new Error(data?.message || "Login failed");
+    if (!result.ok || !result.data) throw new Error(result.message || "Login failed");
 
+    const data = result.data
 
     const role = data?.role || "user"
 
@@ -39,6 +46,8 @@ function Login() {
    }
     }
 
+    
+
   return (
     <div className='max-w-md mx-auto py-10 mt-40'>
          
@@ -46,9 +55,7 @@ function Login() {
 
 
       <form className='mt-50' onSubmit={onSubmit}>
-
         <input
-        
         className='w-full border p-2 rounded mb-6'
         placeholder='Email'
         name="email"
@@ -56,7 +63,6 @@ function Login() {
         value={form.email}
         onChange={(e) => setForm((s) => ({ ...s, email: e.target.value }))}
         />
-
         
         <input
         

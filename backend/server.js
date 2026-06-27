@@ -5,6 +5,21 @@ const dotenv = require("dotenv").config()
 const cookieParser = require("cookie-parser")
 
 const { connectDB, closeDB } = require("./config/db")
+
+const requiredEnvVars = ["SECRET_KEY"]
+const missingEnvVars = requiredEnvVars.filter(
+  (envVar) => !process.env[envVar] || !process.env[envVar].trim()
+)
+
+if (missingEnvVars.length) {
+  console.error(
+    `Missing required environment variable(s): ${missingEnvVars.join(
+      ", "
+    )}. Add them to backend/.env and deployment settings.`
+  )
+  process.exit(1)
+}
+
 app.use(cookieParser());
 
 connectDB();
@@ -41,6 +56,23 @@ const PORT  = process.env.PORT || 3000
 app.get("/", (req, res) => {
   res.json({ message: "Server is live ..." });
 });
+
+app.use((err, req, res, next) => {
+  console.error("Unhandled application error:", err)
+
+  if (res.headersSent) {
+    return next(err)
+  }
+
+  const statusCode =
+    Number.isInteger(err?.statusCode) ? err.statusCode :
+    Number.isInteger(err?.status) ? err.status : 500
+
+  const message =
+    statusCode >= 500 ? "Internal server error" : err?.message || "Request failed"
+
+  return res.status(statusCode).json({ message })
+})
 
 app.listen(PORT,()=> {
     console.log(`server is running on port ${PORT}`)

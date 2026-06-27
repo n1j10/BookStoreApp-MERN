@@ -10,8 +10,6 @@ function Home() {
         <Hero/>
         
         <div className='p-10 lg:px-52'>
-
-      
         <Highlights/>
         <FeaturedProducts/>
          <OnSaleProducts/>

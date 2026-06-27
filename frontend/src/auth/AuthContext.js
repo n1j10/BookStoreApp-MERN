@@ -1,4 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useState } from "react"
+import { apiFetch, parseApiResponse } from "../utils/api";
 
 export const AuthContext = createContext(null);
 
@@ -14,23 +15,28 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
-
+ 
     const normalizeRole = (r) =>
         (r || "user").toString().trim().toLowerCase();
 
     const checkAuthStatus = useCallback(async () => {
         try {
-            const response = await fetch("https://book-store-app-mern-xi.vercel.app/users/verify", {
+            const response = await apiFetch("/users/verify", {
                 method: "GET",
                 credentials: 'include',
             })
-            if (response.ok) {
-                const data = await response.json()
-                const role = normalizeRole(data?.user?.role);
-                setUser({ ...data.user, role });
+            const result = await parseApiResponse(response, {
+                fallbackError: "Unable to verify session",
+            });
+
+            if (result.ok && result.data?.user) {
+                const role = normalizeRole(result.data.user.role);
+                setUser({ ...result.data.user, role });
             } else {
                 setUser(null)
             }
+
+
         } catch (error) {
             console.error('Auth check failed:', error);
             setUser(null)
@@ -39,13 +45,10 @@ export const AuthProvider = ({ children }) => {
         }
     }, [])
 
-    useEffect(() => {
-        checkAuthStatus()
-    }, [checkAuthStatus])
-
+  
     const login = async (credentials) => {
         try {
-            const response = await fetch("https://book-store-app-mern-xi.vercel.app/users/signin", {
+            const response = await apiFetch("/users/signin", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -53,24 +56,24 @@ export const AuthProvider = ({ children }) => {
                 credentials: 'include',
                 body: JSON.stringify(credentials)
             })
+
+            const result = await parseApiResponse(response, {
+                fallbackError: "Login failed",
+            });
             
-            if (response.ok) {
-                const data = await response.json()
-                const role = normalizeRole(data?.user?.role)
-                setUser({ ...data.user, role });
-                return { success: true, data };
-            } else {
-                const errorData = await response.json();
-                return { success: false, error: errorData.message };
+            if (result.ok && result.data?.user) {
+                const role = normalizeRole(result.data.user.role)
+                setUser({ ...result.data.user, role });
+                return { success: true, data: result.data };
             }
+            return { success: false, error: result.message || "Login failed" };
         } catch (error) {
             return { success: false, error: 'Login failed' };
         }
     }
-
     const register = async (userData) => {
         try {
-            const response = await fetch("https://book-store-app-mern-xi.vercel.app/users/register", {
+            const response = await apiFetch("/users/register", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -78,16 +81,16 @@ export const AuthProvider = ({ children }) => {
                 credentials: 'include',
                 body: JSON.stringify(userData)
             })
+            const result = await parseApiResponse(response, {
+                fallbackError: "Register failed",
+            });
             
-            if (response.ok) {
-                const data = await response.json()
-                const role = normalizeRole(data?.user?.role);
-                setUser({ ...data.user, role }); 
-                return { success: true, data };
-            } else {
-                const errorData = await response.json();
-                return { success: false, error: errorData.message };
+            if (result.ok && result.data?.user) {
+                const role = normalizeRole(result.data.user.role);
+                setUser({ ...result.data.user, role }); 
+                return { success: true, data: result.data };
             }
+            return { success: false, error: result.message || "Register failed" };
         } catch (error) {
             return { success: false, error: 'Register failed' };
         }
@@ -95,7 +98,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = async () => {
         try {
-            await fetch("https://book-store-app-mern-xi.vercel.app/users/logout", {
+            await apiFetch("/users/logout", {
                 method: "POST",
                 credentials: 'include',
             })
@@ -105,6 +108,8 @@ export const AuthProvider = ({ children }) => {
             setUser(null)
         }
     }
+
+
 
     const value = {
         user,
@@ -121,3 +126,4 @@ export const AuthProvider = ({ children }) => {
         <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
     )
 }
+

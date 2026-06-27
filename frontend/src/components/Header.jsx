@@ -5,8 +5,6 @@ import { Heart, ShoppingBasket } from 'lucide-react';
 import { useCart } from '../auth/CartContext';
 
 function Header() {
-
-
      const { user, logout, isAuthenticated, isAdmin } = useAuth();
        const {cart} = useCart()
    const navLinks = [
@@ -19,6 +17,7 @@ function Header() {
     const [isScrolled, setIsScrolled] = React.useState(false);
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const navigate = useNavigate()
+  
     React.useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);

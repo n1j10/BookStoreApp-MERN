@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useCart } from '../auth/CartContext';
 import { Link } from 'react-router-dom';
-import { getImageSrc } from '../utils/getImageSrc';
+import { apiFetch, parseApiResponse, buildApiUrl } from '../utils/api';
 
 function OnSaleProducts() {
   const [bookList, setBookList] = useState([]);
@@ -9,10 +9,33 @@ function OnSaleProducts() {
   const {addToCart} = useCart()
 
   useEffect(() => {
-    fetch("https://book-store-app-mern-xi.vercel.app/books/getBooks")
-      .then(res => res.json())
-      .then(data => setBookList(data))
-      .catch(err => console.error("Error fetching books:", err));
+    let isMounted = true;
+
+    const loadBooks = async () => {
+      try {
+        const response = await apiFetch("/books/getBooks");
+        const result = await parseApiResponse(response, {
+          fallbackError: "Error fetching books",
+        });
+
+        if (!isMounted) return;
+        setBookList(Array.isArray(result.data) ? result.data : []);
+
+        if (!result.ok) {
+          console.error(result.message || "Error fetching books");
+        }
+      } catch (err) {
+        if (!isMounted) return;
+        setBookList([]);
+        console.error("Error fetching books:", err);
+      }
+    };
+
+    loadBooks();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
 
@@ -24,8 +47,6 @@ function OnSaleProducts() {
   //   .then(data => setBookList(data));
 
   // }
-
-
 
   const isOnSale = bookList?.filter(book => book.isOnSale === true);
 
@@ -42,7 +63,7 @@ function OnSaleProducts() {
         
           <div key={book._id} className='flex flex-col items-center  p-4 rounded-lg'>
                       <Link to={`/bookDetails/${book?._id}`}>
-                      <img className='w-full h-[450px] ' src={getImageSrc(book.coverImage)} alt={book?.title || "Book cover"} />
+                      <img className='w-full h-[450px] ' src={book.coverImage?.startsWith('http') ? book.coverImage : buildApiUrl(`/images/${book.coverImage?.replace(/^\/+/, '') || 'fallback'}`)} alt={book?.title || "Book cover"} />
                      
                       <h6 className='text-center my-3'>{book.title}</h6>
                       </Link>
@@ -56,10 +77,7 @@ function OnSaleProducts() {
                       onClick={() => {addToCart(book._id);
                          setBookList(prev => prev.map(b =>b._id=== book._id ?{ ...b, stock: b.stock - 1 } : b))
                           setMessage("Added To Cart Successfully")
-                        
                         }}
-          
-                      
                         disabled={book.stock === 0}
                         className=" mt-5 whitespace-nowrap w-44 disabled:bg-gray-400"
                       >
