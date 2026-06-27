@@ -87,3 +87,6 @@ process.on("SIGTERM", async () => {
   await closeDB()
   process.exit(0)
 })
+
+module.exports = app
+
