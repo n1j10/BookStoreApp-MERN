@@ -12,12 +12,11 @@ const missingEnvVars = requiredEnvVars.filter(
 )
 
 if (missingEnvVars.length) {
-  console.error(
-    `Missing required environment variable(s): ${missingEnvVars.join(
+  console.warn(
+    `Warning: Missing environment variable(s): ${missingEnvVars.join(
       ", "
-    )}. Add them to backend/.env and deployment settings.`
+    )}. Add them to Vercel's Environment Variables settings.`
   )
-  process.exit(1)
 }
 
 app.use(cookieParser());
@@ -49,7 +48,6 @@ app.use("/category" ,require("./routes/category"))
 app.use("/admin" ,require("./routes/admin"))
 app.use("/carts" ,require("./routes/carts"))
 
-app.use("/images",express.static("images"))
 
 const PORT  = process.env.PORT || 3000
 

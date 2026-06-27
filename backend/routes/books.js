@@ -6,17 +6,9 @@ const multer  = require('multer')
 
 
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './images')
-  },
-  filename: function (req, file, cb) {
-    const filename = Date.now() + '-' + file.fieldname
-     cb(null, filename)
-  }
-})
+const storage = multer.memoryStorage()
+const upload = multer({ storage: storage, limits: { fileSize: 5 * 1024 * 1024 } })
 
-const upload = multer({ storage: storage,limits: { fileSize: 5 * 1024 * 1024 } })
 router.post("/createBook", upload.single('coverImage'), async(req,res)=>{
     try {
         const {title,author,description,price,stock,isFeautred,category,discountPercent ,isOnSale } = req.body
@@ -35,7 +27,7 @@ router.post("/createBook", upload.single('coverImage'), async(req,res)=>{
       isOnSale,
       discountPercent,
       category,
-      coverImage: req.file?.filename ,
+      coverImage: req.file ? req.file.originalname : undefined,
     })
 
     await newBook.save()

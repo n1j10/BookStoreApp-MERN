@@ -7,16 +7,7 @@ const {cookieAuth} = require("../auth/middleware")
 
 
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './images')
-  },
-  filename: function (req, file, cb) {
-    const filename = Date.now() + '-' + file.fieldname
-     cb(null, filename)
-  }
-})
-
+const storage = multer.memoryStorage()
 const upload = multer({ storage: storage })
 router.post("/createBook", cookieAuth, upload.single('coverImage'), async(req,res)=>{
     try {
@@ -36,7 +27,7 @@ router.post("/createBook", cookieAuth, upload.single('coverImage'), async(req,re
       isOnSale,
       discountPercent,
       category,
-      coverImage: req.file?.filename ,
+      coverImage: req.file ? req.file.originalname : undefined,
     })
 
     await newBook.save()
