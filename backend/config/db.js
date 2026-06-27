@@ -1,6 +1,5 @@
 const mongoose = require("mongoose")
 const dns = require("dns")
-const { MongoMemoryServer } = require("mongodb-memory-server")
 
 let memoryServer
 const DEFAULT_DNS_SERVERS = ["1.1.1.1", "8.8.8.8"]
@@ -69,6 +68,7 @@ const connectDB = async () => {
     if (!useMemory) return
 
     try {
+        const { MongoMemoryServer } = require("mongodb-memory-server")
         memoryServer = await MongoMemoryServer.create({ instance: { dbName } })
         const memUri = memoryServer.getUri()
         await connectWithUri(memUri, "In-memory MongoDB")

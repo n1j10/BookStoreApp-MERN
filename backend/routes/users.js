@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 
 const User = require("../models/UserSchema")
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcryptjs")
 const {cookieAuth} = require("../auth/middleware")
 const jwt = require("jsonwebtoken")
 router.post("/register", async(req,res)=> {
