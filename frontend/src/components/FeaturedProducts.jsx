@@ -36,7 +36,7 @@ function FeaturedProducts() {
         }
       } catch (err) {
         setBookList([]);
-        console.error("Error fetching books:", err);
+        console.error("Error fetching bookss:", err);
       }
     };
 
