@@ -1,6 +1,6 @@
 import React from 'react'
-import { useCart } from '../auth/CartContext'
-import { buildApiUrl } from '../utils/api'
+import { useCart } from '../features/cart/store/cartStore'
+import { buildApiUrl } from '../lib/api'
 
 function CartPage() {
 
